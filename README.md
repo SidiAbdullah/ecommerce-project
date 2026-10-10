@@ -1,12 +1,40 @@
-# React + Vite
+# 🛒 E-Commerce Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack e-commerce project built with **React, Vite, and a backend API**, developed as part of my practical web development journey.
 
-Currently, two official plugins are available:
+## 🛠️ Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Frontend:** React, JavaScript, HTML, CSS, Vite
+- **Routing:** React Router
+- **API Requests:** Axios
+- **Backend:** E-Commerce Backend API
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Component-based React architecture
+- Client-side routing
+- Backend API integration
+- Dynamic data handling
+- Reusable UI components
+
+## 🚧 Status
+
+Currently in development. New features and improvements are being added as I progress through the project.
+
+## ⚙️ Getting Started
+
+```bash
+npm install
+npm run dev
+```
+
+Make sure the backend API is configured and running for features that require it.
+
+- [Backend Repository](https://github.com/SuperSimpleDev/ecommerce-backend-ai)
+- [Backend Documentation](https://github.com/SuperSimpleDev/ecommerce-backend-ai/blob/main/documentation.md)
+
+## 👨‍💻 Author
+
+**Sidi Abdullah**
+
+[GitHub Profile](https://github.com/SidiAbdullah)
