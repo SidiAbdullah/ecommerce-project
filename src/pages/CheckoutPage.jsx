@@ -7,7 +7,7 @@ import "./CheckoutPage.css";
 
 export function CheckoutPage({ cart }) {
   const [deliveryOptions, setdeliveryOptions] = useState([]);
-  const [paymentSummary, setPaymentSummary] = useState(null);
+  const [paymentSummary, setPaymentSummary] = useState([]);
 
   useEffect(() => {
     axios
@@ -37,7 +37,7 @@ export function CheckoutPage({ cart }) {
           <div className="checkout-header-middle-section">
             Checkout (
             <a className="return-to-home-link" href="/">
-              2 items
+              {paymentSummary.totalItems} items
             </a>
             )
           </div>
