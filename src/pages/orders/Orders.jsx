@@ -1,17 +1,20 @@
 import axios from "axios";
 import dayjs from "dayjs";
-import { formatMoney } from "../utils/money";
+import { formatMoney } from "../../utils/money";
 import { useEffect, useState, Fragment } from "react";
-import { Header } from "../components/Header";
+import { Header } from "../../components/Header";
 import "./orders.css";
 
 export function Orders({ cart }) {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    axios.get("/api/orders?expand=products  ").then((Response) => {
-      setOrders(Response.data);
-    });
+    async function loadOrders() {
+      const response = await axios.get("/api/orders?expand=products");
+      setOrders(response.data);
+    }
+
+    loadOrders();
   }, []);
 
   return (
