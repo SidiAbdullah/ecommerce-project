@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { HomePage } from "./pages/home/HomePage";
 import { CheckoutPage } from "./pages/checkout/CheckoutPage";
 import { Orders } from "./pages/orders/Orders";
-import { Tracking } from "./pages/tracking";
 import "./App.css";
 
 function App() {
@@ -30,7 +29,6 @@ function App() {
         element={<CheckoutPage cart={cart} loadCartItems={loadCartItems} />}
       />
       <Route path="orders" element={<Orders cart={cart} />} />
-      <Route path="tracking" element={<Tracking />} />
     </Routes>
   );
 }

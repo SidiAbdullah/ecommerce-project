@@ -1,40 +1,54 @@
-# 🛒 E-Commerce Web Application
+# React + TypeScript + Vite
 
-A full-stack e-commerce project built with **React, Vite, and a backend API**, developed as part of my practical web development journey.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## 🛠️ Tech Stack
+Currently, two official plugins are available:
 
-- **Frontend:** React, JavaScript, HTML, CSS, Vite
-- **Routing:** React Router
-- **API Requests:** Axios
-- **Backend:** E-Commerce Backend API
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## ✨ Features
+## Expanding the ESLint configuration
 
-- Component-based React architecture
-- Client-side routing
-- Backend API integration
-- Dynamic data handling
-- Reusable UI components
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-## 🚧 Status
-
-Currently in development. New features and improvements are being added as I progress through the project.
-
-## ⚙️ Getting Started
-
-```bash
-npm install
-npm run dev
+```js
+export default tseslint.config({
+  extends: [
+    // Remove ...tseslint.configs.recommended and replace with this
+    ...tseslint.configs.recommendedTypeChecked,
+    // Alternatively, use this for stricter rules
+    ...tseslint.configs.strictTypeChecked,
+    // Optionally, add this for stylistic rules
+    ...tseslint.configs.stylisticTypeChecked,
+  ],
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
 ```
 
-Make sure the backend API is configured and running for features that require it.
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-- [Backend Repository](https://github.com/SuperSimpleDev/ecommerce-backend-ai)
-- [Backend Documentation](https://github.com/SuperSimpleDev/ecommerce-backend-ai/blob/main/documentation.md)
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-## 👨‍💻 Author
-
-**Sidi Abdullah**
-
-[GitHub Profile](https://github.com/SidiAbdullah)
+export default tseslint.config({
+  plugins: {
+    // Add the react-x and react-dom plugins
+    'react-x': reactX,
+    'react-dom': reactDom,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended typescript rules
+    ...reactX.configs['recommended-typescript'].rules,
+    ...reactDom.configs.recommended.rules,
+  },
+})
+```
